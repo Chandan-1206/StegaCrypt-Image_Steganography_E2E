@@ -1,10 +1,8 @@
-# app.py — STEGACRYPT (no password field; auto keys; capacity + payload feedback)
+# app.py 
 import os
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 from PIL import Image, ImageTk
-
-# functions from encrypt.py (hybrid RSA + AES + LSB)
 from encrypt import (
     load_public_key, load_private_key,
     embed_message_rsa, extract_message_rsa,
@@ -200,7 +198,6 @@ def do_embed():
         set_status("Encrypting message (AES) and wrapping key (RSA)...")
         pub = load_public_key(public_key_path)
         embed_message_rsa(input_image, output_image, msg, pub)
-        # feedback
         msg_len = len(msg.encode('utf-8'))
         try:
             cap = capacity_for_image(input_image)
