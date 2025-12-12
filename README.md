@@ -1,45 +1,39 @@
-# Image Steganography AES
+# Image Steganography AES + RSA (StegaCrypt)
 
-A Python-based GUI tool using AES encryption and LSB steganography to securely hide/extract secret messages within images for private communication.  
+A Python-based GUI tool using **AES-256 encryption**, **RSA-2048 key wrapping**, and **LSB steganography** to securely hide and extract secret messages within images for private, end-to-end encrypted communication.  
 Rebuilt and maintained by **Chandan Agarwal**.
 
 ## Features
 
-- **Message Encryption:**  
-  Uses **AES-256 (GCM)** to encrypt the secret message before hiding it, ensuring strong security and message integrity.
+- **Hybrid Encryption (AES + RSA):**  
+  Encrypts messages using **AES-256 GCM**, then secures the AES key using **RSA-2048 OAEP**, ensuring that only the intended private-key holder can decrypt the hidden message.
 
 - **LSB Image Steganography:**  
-  Implements Least Significant Bit (LSB) encoding to embed encrypted messages within image pixels, ensuring minimal distortion.
+  Uses Least Significant Bit (LSB) encoding to embed encrypted payloads inside image pixels with minimal visual distortion.
 
-- **Easy-to-Use GUI:**  
-  Built using Tkinter, offering a clean and user-friendly interface for embedding and extracting hidden messages.
+- **User-Friendly GUI:**  
+  Tkinter-based interface with image preview, capacity indicators, encryption/decryption controls, and optional RSA keypair generation.
 
 ## Tech Stack
 
 - **Python 3.x:**  
-  Core programming language for logic and processing.
+  Core programming language for application logic.
 
 - **Tkinter:**  
-  GUI toolkit for building the application's interface.
+  Provides a clean graphical interface.
 
 - **Pillow (PIL):**  
-  Image processing library used for handling and manipulating image files.
+  Handles image loading, processing, and pixel manipulation.
 
 - **cryptography:**  
-  Provides AES encryption for secure message protection.
+  Implements AES-256 GCM symmetric encryption and RSA-2048 OAEP asymmetric encryption.
 
 - **NumPy:**  
-  Used for pixel-level data manipulation.
+  Used for efficient image/pixel data manipulation.
 
 ## Requirements
 
-To run this project, you will need Python 3.x and the following libraries installed:
-
-- `Pillow`
-- `cryptography`
-- `numpy`
-
-Install all dependencies using:
+Install the required dependencies using:
 pip install -r requirements.txt
 
 ## Contact
