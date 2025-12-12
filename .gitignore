@@ -1,2 +1,5 @@
 myenv/
 __pycache__/
+private.pem
+*.pem
+!public.pem
